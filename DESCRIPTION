@@ -1,0 +1,26 @@
+Package: PLAdetect
+Title: RNA-Based Detection of Platelet-Leukocyte Aggregates in scRNA-seq Data
+Version: 0.1.0
+Authors@R: c(
+    person("Aurelia", "Dersch", , "DEINE@MAIL", role = c("aut", "cre")),
+    person("Irem", "Kaciran", role = "aut"),
+    person("Fabian", "Mathis", role = "aut")
+    )
+Description: Scores every cell for a platelet signature and a leukocyte
+    activation signature and calls platelet-leukocyte aggregates (PLAs) with a
+    global dual-gate Gaussian mixture model.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.1
+Config/testthat/edition: 3
+Imports: 
+    Seurat (>= 5.0.0),
+    SeuratObject,
+    AUCell,
+    mclust,
+    ggplot2,
+    rlang
+Suggests: 
+    UCell,
+    testthat (>= 3.0.0)
