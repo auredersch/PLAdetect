@@ -8,3 +8,4 @@ importFrom(mclust,
   mclustBIC
 )
 importFrom(rlang,.data)
+importFrom(stats,sd)

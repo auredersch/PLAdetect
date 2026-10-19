@@ -13,7 +13,6 @@ DefaultAssay(pbmc) <- "RNA"
 # --- PLAenriched ---
 pbmc <- detect_pla(pbmc, platelet_signature = "GOBP", method = "AUCell")
 
-# --- CONFUSION MATRIX AGAINST THE BIOLOGIST ---
 GT_COLUMN <- if ("pla_status" %in% colnames(pbmc@meta.data)) "pla_status" else "pla.status"
 gt_values <- as.character(pbmc@meta.data[[GT_COLUMN]])
 gt_values[is.na(gt_values)] <- "platelet-free"
@@ -28,7 +27,7 @@ prec <- if ((tp + fp) > 0) tp / (tp + fp) else 0
 rec  <- if ((tp + fn) > 0) tp / (tp + fn) else 0
 f1   <- if ((prec + rec) > 0) 2 * prec * rec / (prec + rec) else 0
 
-# --- COMPARISON ---
+# Comaprison
 bench <- read.csv(file.path(project_root, "results/benchmarking/metrics", BENCH_FILE))
 vergleich <- rbind(
   PLAenriched = data.frame(TP = tp, FP = fp, FN = fn, TN = tn, F1 = round(f1, 4)),

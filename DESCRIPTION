@@ -19,8 +19,9 @@ Imports:
     SeuratObject,
     AUCell,
     mclust,
-    ggplot2,
-    rlang
+    methods,
+    rlang,
+    stats
 Suggests: 
     UCell,
     testthat (>= 3.0.0)

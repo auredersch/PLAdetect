@@ -16,6 +16,7 @@
 #' @param max_plausible_frac Warn if the share of PLA-labeled cells is higher.
 #' @param seed Seed set at the start of the run (mclust starts from a random
 #'   subset in large datasets). `NULL` leaves the random number generator untouched.
+#' @importFrom stats sd
 #' @return The Seurat object with new meta data columns `PLA_status`,
 #'   `PLA_score`, `PLA_score_z`, `PLA_immune_score`, `PLA_platelet_prob`,
 #'   `PLA_immune_prob`, `PLA_platelet_high` and `PLA_immune_high`. Thresholds
