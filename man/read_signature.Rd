@@ -14,7 +14,7 @@ signature (see \code{\link[=list_signatures]{list_signatures()}}).}
 \item{set}{For GMT files with several gene sets: name of the set to use.}
 }
 \value{
-Character vector of unique gene symbols.
+Character vector of gene symbols.
 }
 \description{
 Read a gene signature

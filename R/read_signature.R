@@ -32,7 +32,7 @@ list_signatures <- function() names(.builtin_signatures())
 #'   `.csv` file (column `geneName`) or `.gmt` file, or the name of a built-in
 #'   signature (see [list_signatures()]).
 #' @param set For GMT files with several gene sets: name of the set to use.
-#' @return Character vector of unique gene symbols.
+#' @return Character vector of gene symbols.
 #' @export
 read_signature <- function(x, set = NULL) {
   if (!is.character(x) || length(x) < 1) {
@@ -91,7 +91,6 @@ read_signature <- function(x, set = NULL) {
   parts[[1]][-(1:2)]
 }
 
-# Same logic as the overlap check in the benchmark script.
 .check_overlap <- function(genes, available, label, min_genes = 3, min_overlap = 0.5) {
   overlap <- intersect(genes, available)
   frac <- length(overlap) / length(genes)
