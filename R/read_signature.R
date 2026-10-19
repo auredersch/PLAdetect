@@ -45,7 +45,7 @@ read_signature <- function(x, set = NULL) {
     path <- x
   } else if (x %in% names(.builtin_signatures())) {
     path <- system.file("extdata", "signatures", .builtin_signatures()[[x]],
-                        package = "PLAdetect")
+                        package = "PLAenriched")
     if (!nzchar(path)) {
       stop("Built-in signature '", x, "' is registered but its file is missing in the package.")
     }

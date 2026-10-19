@@ -22,10 +22,10 @@ score_cells <- function(seu, signatures,
     colnames(scores) <- sub("_UCell$", "", colnames(scores))  
 
   } else {
-    # AddModuleScore appends one column per feature set: PLAdetectAMS1, PLAdetectAMS2
+    # AddModuleScore appends one column per feature set: PLAenrichedAMS1, PLAenrichedAMS2
     tmp <- Seurat::AddModuleScore(seu, features = unname(signatures), assay = assay,
-                                  name = "PLAdetectAMS")
-    scores <- as.matrix(tmp@meta.data[, paste0("PLAdetectAMS", seq_along(signatures)), drop = FALSE])
+                                  name = "PLAenrichedAMS")
+    scores <- as.matrix(tmp@meta.data[, paste0("PLAenrichedAMS", seq_along(signatures)), drop = FALSE])
     colnames(scores) <- names(signatures)
   }
 

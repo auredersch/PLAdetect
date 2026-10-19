@@ -13,7 +13,8 @@ detect_pla(
   layer = "data",
   min_genes = 3,
   min_overlap = 0.5,
-  max_plausible_frac = 0.3
+  max_plausible_frac = 0.3,
+  seed = 42
 )
 }
 \arguments{
@@ -34,12 +35,15 @@ second gate. Default is the built-in \code{GOBP_LEUKOCYTE}.}
 fraction of a signature is found in the data.}
 
 \item{max_plausible_frac}{Warn if the share of PLA-labeled cells is higher.}
+
+\item{seed}{Seed set at the start of the run (mclust starts from a random
+subset in large datasets). \code{NULL} leaves the random number generator untouched.}
 }
 \value{
 The Seurat object with new meta data columns \code{PLA_status},
 \code{PLA_score}, \code{PLA_score_z}, \code{PLA_immune_score}, \code{PLA_platelet_prob},
 \code{PLA_immune_prob}, \code{PLA_platelet_high} and \code{PLA_immune_high}. Thresholds
-and settings are stored in \code{seu@misc$PLAdetect}.
+and settings are stored in \code{seu@misc$PLAenriched}.
 }
 \description{
 Scores every cell for a platelet signature and for a leukocyte activation

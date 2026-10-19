@@ -1,4 +1,4 @@
-Package: PLAdetect
+Package: PLAenriched
 Title: RNA-Based Detection of Platelet-Leukocyte Aggregates in scRNA-seq Data
 Version: 0.1.0
 Authors@R: c(

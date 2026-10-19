@@ -19,7 +19,7 @@
 #' @return The Seurat object with new meta data columns `PLA_status`,
 #'   `PLA_score`, `PLA_score_z`, `PLA_immune_score`, `PLA_platelet_prob`,
 #'   `PLA_immune_prob`, `PLA_platelet_high` and `PLA_immune_high`. Thresholds
-#'   and settings are stored in `seu@misc$PLAdetect`.
+#'   and settings are stored in `seu@misc$PLAenriched`.
 #' @export
 detect_pla <- function(seu,
                        platelet_signature = "REACTOME",
@@ -92,12 +92,12 @@ detect_pla <- function(seu,
             "The method fails mostly by labeling too many cells, check signature and score distribution.")
   }
 
-  seu@misc[["PLAdetect"]] <- list(
+  seu@misc[["PLAenriched"]] <- list(
     method = method, assay = assay, layer = layer,
     n_platelet_genes = length(genes), n_immune_genes = length(immune_genes),
     threshold_platelet = gate$Threshold_Platelet,
     threshold_immune = gate$Threshold_Immune,
-    version = as.character(utils::packageVersion("PLAdetect")),
+    version = as.character(utils::packageVersion("PLAenriched")),
     seed = seed
   )
   seu

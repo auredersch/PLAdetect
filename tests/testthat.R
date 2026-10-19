@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(PLAdetect)
+library(PLAenriched)
 
-test_check("PLAdetect")
+test_check("PLAenriched")
